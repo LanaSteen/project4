@@ -1,3 +1,34 @@
 import { Routes } from '@angular/router';
+import { Home } from './home/home';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+
+{
+  path : "",
+  redirectTo : "home",
+  pathMatch : "full"
+},
+
+{
+  path : "home",
+  // component : Home
+  loadComponent : () => import("./home/home").then(m => m.Home)
+},
+
+{
+  path : "details",
+  loadComponent : () => import("./details/details").then(m => m.Details)
+},
+{
+  path : "**",
+  loadComponent : () => import("./error/error").then(m => m.Error)
+
+}
+
+];
+
+
+
+// eager 
+
+// lazy loading
