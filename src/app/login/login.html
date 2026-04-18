@@ -1,0 +1,22 @@
+
+
+<form action=""  #myForm="ngForm" (ngSubmit)="log(myForm)">
+  <input #email="ngModel" type="email" name="email" ngModel   [(ngModel)]="loginUser.email"  email required/>
+  
+    @if(!email.valid){
+     <p style="color:red">email is not correct format</p>
+    }
+
+  <input type="password" name="password"   ngModel  [(ngModel)]="loginUser.password" minlength="8" required/>
+
+  <button [disabled]="myForm.invalid">login</button>
+</form>
+
+<!-- stepacc210@gmail.com -->
+
+<!-- Stepacc210@gmail.com -->
+<!-- 
+{
+x : dfdfgghjjk
+password : dfgfhj
+} -->
